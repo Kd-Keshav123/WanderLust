@@ -1,19 +1,15 @@
+const path = require("path");
+require('dotenv').config({ path: path.join(__dirname, "../.env") });
+
 const mongoose = require("mongoose");
 const initData = require("./data.js");           // Listing Data Here
 const Listing = require("../models/listing.js");             // Schema defination and model Creation
 
-const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
-
-main()
-  .then(() => {
-    console.log("connected to DB");
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+const MONGO_URL = process.env.ATLASDB; // Or whatever variable name you used
+main().then(() => { console.log("connected to DB"); });
 
 async function main() {
-  await mongoose.connect(MONGO_URL);
+  await mongoose.connect(MONGO_URL); 
 }
 
 const initDB = async () => {
