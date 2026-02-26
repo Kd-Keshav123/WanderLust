@@ -1,0 +1,21 @@
+<% if(success !="") { %>
+    <div class="alert alert-success alert-dismissible fade show col-4 offset-4" role="alert">
+        <%= success%>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" area-label="Close"> </button>
+    </div>
+    <% }%>
+
+    <% if(success2 !="") { %>
+    <div class="alert alert-danger alert-dismissible fade show col-4 offset-4" role="alert">
+        <%= success2 %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" area-label="Close"> </button>
+    </div>
+    <% }%>
+    <% if(error != "") { %>
+    <div class="alert alert-danger alert-dismissible fade show col-4 offset-4" role="alert">
+        <%= error %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" area-label="Close"> </button>
+    </div>
+    <% }%>
+
+        <!-- or if(success && success.length) -->

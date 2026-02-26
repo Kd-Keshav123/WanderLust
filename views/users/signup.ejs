@@ -1,0 +1,35 @@
+<% layout("/layouts/boilerplate") %>
+
+    <div class="mt-3"> <br><br><br><br><br><br>
+
+        <div class="col-4 offset-4 card"><br>
+            <h1 class="col-8 offset-1">Signup to KAVD hotels</h1><br>
+
+            <div class="col-8 offset-1">
+                <form action="/signup" method="post" class="needs-validation" novalidate>
+
+                    <div class="mb-3">
+                        <label for="username" class="form-label"> Username <b style="color: red;">*</b></label>
+                        <input name="username" id="username" type="text" class="form-control" required>
+
+                        <div class="valid-feedback"> Looks Good! </div>
+                        <div class="invalid-feedback"> Please enter a username! </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label"> Email <b style="color: red;">*</b></label>
+                        <input name="email" id="username" type="text" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password" class="form-label"> password <b style="color: red;">*</b></label>
+                        <input name="password" id="username" type="password" class="form-control" required>
+                        <div class="invalid-feedback"> Please enter a password </div>
+                    </div>
+
+                    <button class="btn btn-outline-success"> Signup </button>
+                </form>
+            </div><br><br>
+
+        </div>
+    </div>

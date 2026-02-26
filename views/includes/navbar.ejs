@@ -1,0 +1,54 @@
+<style>
+  .buttons{
+    background-color: red;
+    color:white;
+    border-radius: 30px;
+    padding: 0 30px;
+  }
+  .buttons:hover{
+    background-color: red;
+    color:white;
+  }
+  .search-inp{
+    padding: 0.5rem 3rem;
+    font-size: 0.8rem;
+  }
+</style>
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+  <div class="container-fluid">
+
+    <a class="navbar-brand" href="/"><i class="fa-regular fa-compass"></i></a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+      <div class="navbar-nav">
+        <a class="nav-link" href="/listings">Explore</a>
+      </div>
+
+      <form class="navbar-nav ms-auto" role="search">
+        <input class="form-control me-2 search-inp" style="border-radius: 30px;" type="search" placeholder="Search destinations" aria-label="Search"/>
+        <button class="btn buttons search-inp" type="submit">Search</button>
+      </form>
+
+      <div class="navbar-nav ms-auto">
+
+        <a class="nav-link" style="border:0.5px solid black;border-radius: 5px;"
+         href="/listings/new">add new Outlets</a> &nbsp;&nbsp;
+
+        <% if(!currUser) { %>
+          <form action="/signup"> <button class="btn btn-primary"> <b> Sign Up</b> </button> </form> &nbsp;&nbsp;
+          <form action="/login"> <button class="btn btn-primary"><b>Log In</b></button> </form> 
+
+          <% } %>
+            <% if(currUser) { %>
+              <form action="/logout"> <button class="btn btn-danger"><b>Log Out</b></button> </form>
+              <% } %>
+      </div>
+
+    </div>
+  </div>
+</nav>

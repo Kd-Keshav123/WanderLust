@@ -1,0 +1,72 @@
+<% layout("/layouts/boilerplate") %>
+
+    <body>
+        <form method="post" action="/listings/<%=newId._id%>?_method=put" novalidate 
+            class="col-6 mx-auto"
+            class="needs-validation" enctype="multipart/form-data">
+            <h1>Edit Your Details Here : </h1> <br>
+
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input name="listing[title]" value="<%=newId.title%> " class="form-control" required>
+
+                <div class="valid-feedback"> Title Looks Good! </div>
+                <div class="invalid-feedback">Please enter a title!</div>
+            </div>
+
+            <!-- we can use "value" attribute to directly show value inside box -->
+
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea name="listing[description]" rows="4"  class="form-control"
+                    required> <%=newId.description%> </textarea>
+
+                <div class="valid-feedback"> Description Looks Good! </div>
+                <div class="invalid-feedback">Please enter a short description!</div>
+            </div>
+
+
+            <div class="mb-3">
+                Previous Image<br>
+                <img src="<%= newImage %>" style="width: 300px; height: 150px;">
+            </div>
+
+            <div class="mb-3">
+                <label for="image" class="form-label">Upload New Image </label>
+                <input name="listing[image]" type="file" class="form-control">
+
+                <div class="valid-feedback"> Image Looks Good! </div>
+                <div class="invalid-feedback">Please give image Link!</div>
+            </div>
+
+
+            <div class="mb-3" style="display: flex; gap:15px; width: 100%;">
+                <div style="flex: 1;">
+                    <label for="price" class="form-label">Price</label>
+                    <input name="listing[price]" value="<%=newId.price%>" type="number" class="form-control" required>
+
+                    <div class="valid-feedback"> Price Looks Good! </div>
+                    <div class="invalid-feedback">Must give a valid price!</div>
+                </div>
+
+                <div style="flex: 1;">
+                    <label for="country" class="form-label">Country</label>
+                    <input name="listing[country]" value="<%=newId.country%>" class="form-control" required>
+
+                    <div class="valid-feedback"> Country Looks Good! </div>
+                    <div class="invalid-feedback">Please enter country name!</div>
+                </div>
+
+                <div style="flex: 1;">
+                    <label for="location" class="form-label">Location</label>
+                    <input name="listing[location]" value="<%=newId.location%>" class="form-control" required>
+
+                    <div class="valid-feedback"> Location Looks Good! </div>
+                    <div class="invalid-feedback">Please enter current location!</div>
+                </div>
+            </div>
+
+            <br>
+            <button class="btn btn-dark">update !</button>
+        </form>
+    </body>

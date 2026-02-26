@@ -1,0 +1,86 @@
+<% layout("/layouts/boilerplate") %>
+
+    <body>
+
+        <div class="row">
+
+            <div class="col-6 mx-auto">
+
+                <h1> Create new listing</h1><br>
+
+                <form method="post" action="/listings" novalidate class="needs-validation"
+                    enctype="multipart/form-data">
+
+                    <div class="mb-3">
+                        <label for="title" class="form-label"> Title <b style="color: red;">*</b></label>
+                        <input name="listing[title]" pattern="[A-Za-z ]+" placeholder="enter title" type="text"
+                            class="form-control" required>
+
+                        <div class="valid-feedback"> Title Looks Good! </div>
+                        <div class="invalid-feedback"> Please enter a title! </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description <b style="color: red;">*</b> </label>
+                        <textarea name="listing[description]" placeholder="enter description" type="text"
+                            class="form-control" required rows="5"></textarea>
+
+                        <div class="valid-feedback"> Description Looks Good! </div>
+                        <div class="invalid-feedback"> Please enter a short description!</div>
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label for="image" class="form-label">Upload Image</label>
+                        <input name="listing[image]" placeholder="paste image link" type="file" class="form-control"
+                            required>
+
+                        <div class="valid-feedback"> Image Looks Good! </div>
+                        <div class="invalid-feedback"> Please upload an image!</div>
+                    </div>
+
+                    <div class="mb-3" style="display: flex; gap:15px; width: 100%;">
+
+                        <div style="flex: 1;">
+                            
+                            <label for="price" class="form-label">Price<b style="color: red;">*</b></label>
+                            <input name="listing[price]" placeholder="enter price" type="number" class="form-control"
+                                required>
+
+                            <div class="valid-feedback"> Price Looks Good! </div>
+                            <div class="invalid-feedback">Must give a valid price!</div>
+
+                        </div>
+
+                        <div style="flex: 1;">
+                            <label for="country" class="form-label">Country<b style="color: red;">*</b></label>
+                            <input name="listing[country]" pattern="[A-Za-z ]+" placeholder="enter country" type="text"
+                                class="form-control" required>
+
+                            <div class="valid-feedback"> Country Looks Good! </div>
+                            <div class="invalid-feedback">Please enter country name!</div>
+
+                        </div>
+
+                        <div style="flex: 1;">
+                            <label for="location" class="form-label">Location<b style="color: red;">*</b></label><br>
+                            <input name="listing[location]" pattern="[A-Za-z ]+" placeholder="enter location"
+                                type="text" class="form-control" required>
+
+                            <div class="valid-feedback"> Location Looks Good! </div>
+                            <div class="invalid-feedback">Please enter current location!</div>
+
+                        </div>
+
+                    </div>
+
+                    <br>
+                    <button class="btn btn-dark">confirm listing</button>
+
+                </form>
+
+            </div>
+
+
+        </div>
+    </body>
